@@ -5,7 +5,7 @@ RegisterNetEvent('Client:Update:Inventoryid', function(id)
 end)
 
 local function openinventory()
-    exports.ox_inventory:openInventory('stash', GlobalState.inventoryid)
+    exports.ox_inventory:openInventory('stash', inventoryid)
 end
 
 
