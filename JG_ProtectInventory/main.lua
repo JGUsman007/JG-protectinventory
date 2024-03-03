@@ -19,7 +19,7 @@ end)
 
 
 
-if Config.framework == 'esx ' then
+if Config.framework == 'esx' then
     ESX = exports["es_extended"]:getSharedObject()
     RegisterNetEvent('esx:playerLoaded', function(player, xPlayer, isNew)
         local id = xPlayer.getIdentifier() .. ' protectinventory'
