@@ -1,4 +1,4 @@
-GlobalState.inventoryid = 'protectinventory'
+
 
 exports.ox_inventory:registerHook('swapItems', function(data)
     local state = false
@@ -24,7 +24,7 @@ if Config.framework == 'esx ' then
     RegisterNetEvent('esx:playerLoaded', function(player, xPlayer, isNew)
         local id = xPlayer.getIdentifier() .. ' protectinventory'
         exports.ox_inventory:RegisterStash(id, 'Protected Inventory', Config.slots, Config.maxweight * 1000)
-        GlobalState.inventoryid = id
+        TriggerClientEvent('Client:Update:Inventoryid',source,id)
     end)
 else
     QBCore = exports['qb-core']:GetCoreObject()
@@ -32,7 +32,7 @@ else
         while (not QBCore.Functions.GetPlayerData()) do
             local id = QBCore.Functions.GetPlayerData().citizenid .. ' protectinventory'
             exports.ox_inventory:RegisterStash(id, 'Protected Inventory', Config.slots, Config.maxweight * 1000)
-            GlobalState.inventoryid = id
+            TriggerClientEvent('Client:Update:Inventoryid',source,id)
         end
     end)
 
